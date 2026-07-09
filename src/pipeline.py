@@ -38,7 +38,7 @@ def execute_paginated_pipeline():
     current_page=1
 
     while current_page <= configs["max_pages"]:
-        logging.info(f"Extracting Data from page: {current_page}, size limit: {configs["page_size"]}")
+        logging.info(f"Extracting Data from page: {current_page}, size limit: {configs['page_size']}")
 
         query_params={
             "_page":current_page,
@@ -76,7 +76,7 @@ def execute_paginated_pipeline():
     with open(configs["output_file"],"w") as target_file:
         json.dump(all_extracted_records, target_file, indent=2)
 
-    logging.info(f"All the extractred data are stored in the {configs["output_file"]}")
+    logging.info(f"All the extractred data are stored in the {configs['output_file']}")
 
 if __name__ == "__main__":
     execute_paginated_pipeline()
