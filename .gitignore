@@ -1,7 +1,5 @@
 .env
-
-raw_transactions.json
-output.json
-
-output/
+*.log
 logs/
+__pycache__/
+.aws/

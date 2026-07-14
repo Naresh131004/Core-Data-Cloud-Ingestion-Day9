@@ -3,9 +3,10 @@ import json
 import logging
 import requests
 import time
+import boto3
 from dotenv import load_dotenv
 
-os.makedirs('logs',exist_ok=True)
+os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -20,14 +21,14 @@ def load_env_configurations():
     """Extract environment variables safely from memory storage with container directory mapping."""
     load_dotenv()
     
-    raw_output_filename = os.getenv("DATA_OUTPUT_PATH", "raw_transactions.json")
-    container_secure_path = f"/app/data/{raw_output_filename}"
-    
     return {
         "url": os.getenv("API_TARGET_URL"),
         "max_pages": int(os.getenv("MAX_PAGE_TO_FETCH", 4)),
         "page_size": int(os.getenv("RECORDS_PER_PAGE", 5)),
-        "output_file": container_secure_path
+        "aws_access_key": os.getenv("AWS_ACCESS_KEY_ID"),
+        "aws_secret_key": os.getenv("AWS_SECRET_ACCESS_KEY"),
+        "aws_bucket": os.getenv("AWS_BUCKET_NAME"),
+        "aws_region": os.getenv("AWS_REGION", "us-east-1")
     }
 
 def clean_and_normalize_posts(post):
@@ -40,7 +41,7 @@ def clean_and_normalize_posts(post):
     }
 
 def execute_paginated_pipeline():
-    """Loops through API pages, normalizes structural items, and saves data persistently."""
+    """Loops through API pages, normalizes structural items, and saves data persistently to AWS S3."""
     logging.info("Initiating Production Pagination Ingestion Engine...")
     configs = load_env_configurations()
 
@@ -88,13 +89,34 @@ def execute_paginated_pipeline():
         
     logging.info(f"Pagination processing completed. Total rows aggregated: {len(all_extracted_records)}")
 
-    target_directory = os.path.dirname(configs["output_file"])
-    os.makedirs(target_directory, exist_ok=True)
+    try:
+        logging.info("Initializing connection network handshake with AWS S3...")
+        
+        # Instantiate the verified S3 Client using your secure environment keys
+        s3_client = boto3.client(
+            's3',
+            aws_access_key_id=configs["aws_access_key"],
+            aws_secret_access_key=configs["aws_secret_key"],
+            region_name=configs["aws_region"]
+        )
 
-    with open(configs["output_file"], "w") as target_file:
-        json.dump(all_extracted_records, target_file, indent=2)
+        s3_partition_path = "raw/year=2026/month=07/day=14/extracted_transactions.json"
+        
+        json_string_payload = json.dumps(all_extracted_records, indent=2)
 
-    logging.info(f"Data engine state synchronization complete. Core metrics dumped to: {configs['output_file']}")
+        logging.info(f"Uploading metrics directly to S3 bucket: {configs['aws_bucket']}...")
+        
+        s3_client.put_object(
+            Bucket=configs["aws_bucket"],
+            Key=s3_partition_path,
+            Body=json_string_payload,
+            ContentType="application/json"
+        )
+        
+        logging.info(f"🚀 SUCCESS: Data engine states uploaded safely to: s3://{configs['aws_bucket']}/{s3_partition_path}")
+
+    except Exception as aws_error:
+        logging.critical(f"❌ PIPELINE FAILURE: Could not upload data to AWS S3. Details: {aws_error}")
 
 if __name__ == "__main__":
     execute_paginated_pipeline()

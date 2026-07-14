@@ -1,0 +1,122 @@
+[
+  {
+    "transaction_id": 1,
+    "associated_user_id": 1,
+    "content_title": "SUNT AUT FACERE REPELLAT PROVIDENT OCCAECATI EXCEPTURI OPTIO REPREHENDERIT",
+    "extracted_time": 1783965030
+  },
+  {
+    "transaction_id": 2,
+    "associated_user_id": 1,
+    "content_title": "QUI EST ESSE",
+    "extracted_time": 1783965030
+  },
+  {
+    "transaction_id": 3,
+    "associated_user_id": 1,
+    "content_title": "EA MOLESTIAS QUASI EXERCITATIONEM REPELLAT QUI IPSA SIT AUT",
+    "extracted_time": 1783965030
+  },
+  {
+    "transaction_id": 4,
+    "associated_user_id": 1,
+    "content_title": "EUM ET EST OCCAECATI",
+    "extracted_time": 1783965030
+  },
+  {
+    "transaction_id": 5,
+    "associated_user_id": 1,
+    "content_title": "NESCIUNT QUAS ODIO",
+    "extracted_time": 1783965030
+  },
+  {
+    "transaction_id": 6,
+    "associated_user_id": 1,
+    "content_title": "DOLOREM EUM MAGNI EOS APERIAM QUIA",
+    "extracted_time": 1783965032
+  },
+  {
+    "transaction_id": 7,
+    "associated_user_id": 1,
+    "content_title": "MAGNAM FACILIS AUTEM",
+    "extracted_time": 1783965032
+  },
+  {
+    "transaction_id": 8,
+    "associated_user_id": 1,
+    "content_title": "DOLOREM DOLORE EST IPSAM",
+    "extracted_time": 1783965032
+  },
+  {
+    "transaction_id": 9,
+    "associated_user_id": 1,
+    "content_title": "NESCIUNT IURE OMNIS DOLOREM TEMPORA ET ACCUSANTIUM",
+    "extracted_time": 1783965032
+  },
+  {
+    "transaction_id": 10,
+    "associated_user_id": 1,
+    "content_title": "OPTIO MOLESTIAS ID QUIA EUM",
+    "extracted_time": 1783965032
+  },
+  {
+    "transaction_id": 11,
+    "associated_user_id": 2,
+    "content_title": "ET EA VERO QUIA LAUDANTIUM AUTEM",
+    "extracted_time": 1783965035
+  },
+  {
+    "transaction_id": 12,
+    "associated_user_id": 2,
+    "content_title": "IN QUIBUSDAM TEMPORE ODIT EST DOLOREM",
+    "extracted_time": 1783965035
+  },
+  {
+    "transaction_id": 13,
+    "associated_user_id": 2,
+    "content_title": "DOLORUM UT IN VOLUPTAS MOLLITIA ET SAEPE QUO ANIMI",
+    "extracted_time": 1783965035
+  },
+  {
+    "transaction_id": 14,
+    "associated_user_id": 2,
+    "content_title": "VOLUPTATEM ELIGENDI OPTIO",
+    "extracted_time": 1783965035
+  },
+  {
+    "transaction_id": 15,
+    "associated_user_id": 2,
+    "content_title": "EVENIET QUOD TEMPORIBUS",
+    "extracted_time": 1783965035
+  },
+  {
+    "transaction_id": 16,
+    "associated_user_id": 2,
+    "content_title": "SINT SUSCIPIT PERSPICIATIS VELIT DOLORUM RERUM IPSA LABORIOSAM ODIO",
+    "extracted_time": 1783965037
+  },
+  {
+    "transaction_id": 17,
+    "associated_user_id": 2,
+    "content_title": "FUGIT VOLUPTAS SED MOLESTIAS VOLUPTATEM PROVIDENT",
+    "extracted_time": 1783965037
+  },
+  {
+    "transaction_id": 18,
+    "associated_user_id": 2,
+    "content_title": "VOLUPTATE ET ITAQUE VERO TEMPORA MOLESTIAE",
+    "extracted_time": 1783965037
+  },
+  {
+    "transaction_id": 19,
+    "associated_user_id": 2,
+    "content_title": "ADIPISCI PLACEAT ILLUM AUT REICIENDIS QUI",
+    "extracted_time": 1783965037
+  },
+  {
+    "transaction_id": 20,
+    "associated_user_id": 2,
+    "content_title": "DOLORIBUS AD PROVIDENT SUSCIPIT AT",
+    "extracted_time": 1783965037
+  }
+]
