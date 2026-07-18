@@ -57,3 +57,13 @@ To showcase this on LinkedIn or explain it clearly during interviews, structure 
 #### 4. Analytical Optimization (The Output Destination)
 * The structured, verified single source of truth is exported straight back to cloud storage pools. 
 * By structuring the final layer as a **Parquet columnar file schema**, you ensure that subsequent processing jobs, BI dashboards, or ML model feature extraction queries can retrieve and aggregate large data sets efficiently without facing costly infrastructure bottlenecks.
+
+---
+
+## 🏗️ Screenshot
+![Pipeline Architecture](assets/Screenshot From 2026-07-18 16-17-42.png)
+![Pipeline Architecture](assets/Screenshot From 2026-07-18 23-20-28.png)
+![Pipeline Architecture](assets/Screenshot From 2026-07-18 23-20-45.png)
+![Pipeline Architecture](assets/Screenshot From 2026-07-18 23-26-30.png)
+![Pipeline Architecture](assets/Screenshot From 2026-07-18 23-28-57.png)
+---
