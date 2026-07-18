@@ -35,7 +35,7 @@ df_raw = (spark.read
 
 print("=== BRONZE ZONE: RAW STORAGE SCHEMA ===")
 df_raw.printSchema()
-
+```
 ---
 
 ### Part 2: The Core Workflow & Work Process Explainer
